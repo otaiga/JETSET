@@ -1,0 +1,12 @@
+Please authenticate your phone number with this application first. 
+<br>
+Thanks
+
+<div>
+  <%= form_tag(auths_path, :method => "POST") do %>
+    Phone number (e.g. 4477123456789)<br>
+    <%= text_field_tag "number", "", :maxlength => 12 %><br>
+    <%= submit_tag("Submit")%>
+  <%end%>
+</div>
+

@@ -1,0 +1,13 @@
+<h1>Please confirm the pin received on your phone:</h1>
+
+<div>
+  <%= form_tag(auth_confirm_pin_path, :method => "POST") do %>
+    Phone number (e.g. 4477123456789) :
+    <%= text_field_tag "number", '', :maxlength => 12 %><br>
+    Pin (Recieved on your phone) : 
+    <%= text_field_tag "pin"  %>
+    <%= hidden_field_tag :token, @token %>
+    <br>
+    <%= submit_tag("Submit")%>
+  <%end%>
+</div>
