@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
   before_filter :authenticate_user!, :validate_user_msisdn
 
   def index
-    #list of users to notify when your roaming.
+    @country = User.find(current_user.id).country
   end
 
 private
