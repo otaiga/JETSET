@@ -8,4 +8,6 @@ Jetset::Application.routes.draw do
   resources :auths
   match "auth/confirm" => "auths#confirm"
   match "auth/confirm_pin" => "auths#confirm_pin"
+
+  post "/notification" => "notifications#retieve_notification"
 end
