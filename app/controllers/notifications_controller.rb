@@ -1,9 +1,9 @@
 class NotificationsController < ApplicationController
 
   def retieve_notification
-    posted = JSON.parse(request.body.read)
-    @msisdn = posted[:msisdn]
-    @country = posted[:country]
+    posted =  JSON.parse(request.body.read.as_json)
+    @msisdn = posted["msisdn"]
+    @country = posted["country"]
     @user = User.where(:msisdn => @msisdn).first
     @user.country = @country
     @user.save
