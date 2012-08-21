@@ -7,7 +7,7 @@ class AuthsController < ApplicationController
 
   def create
     @msisdn = params[:number]
-    @token = JetSetApi.get_auth_token(@msisdn)
+    @token = Jetsetmeapi.get_auth_token(@msisdn)
     unless @token.kind_of?(Hash)
       redirect_to auth_confirm_path({:token => @token})
     else
@@ -26,7 +26,7 @@ class AuthsController < ApplicationController
     @token = params[:token]
     @pin = params[:pin]
     @msisdn = params[:number]
-    @auth_key = JetSetApi.get_auth_key(@pin, @token)
+    @auth_key = Jetsetmeapi.get_auth_key(@pin, @token)
     if @auth_key
       @user.update_attributes(:msisdn => @msisdn, :auth_key => @auth_key)
       redirect_to account_path

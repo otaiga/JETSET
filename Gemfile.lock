@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/otaiga/jetsetmeapi-gem.git
+  revision: 8315be9b98e9b3f8174347821b7eed392466f0b6
+  specs:
+    jetsetmeapi (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -154,6 +160,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   httparty
+  jetsetmeapi!
   jquery-rails
   json
   mysql2
