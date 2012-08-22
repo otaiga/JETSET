@@ -1,8 +1,11 @@
 GIT
   remote: https://github.com/otaiga/jetsetmeapi-gem.git
-  revision: 1bd8096d852fe41133164d4ac14d31241a5f2806
+  revision: 168b16c4edf3717b43c93fc455975e2e1cc85872
+  branch: tests
   specs:
-    jetsetmeapi (0.0.1)
+    jetsetmeapi (0.0.2)
+      httparty
+      json
 
 GEM
   remote: https://rubygems.org/

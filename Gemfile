@@ -27,7 +27,7 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-gem 'jetsetmeapi', :git => "https://github.com/otaiga/jetsetmeapi-gem.git"
+gem 'jetsetmeapi', :git => "https://github.com/otaiga/jetsetmeapi-gem.git", :branch => :tests
 gem 'httparty'
 
 group :production do

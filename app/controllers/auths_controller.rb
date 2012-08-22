@@ -1,5 +1,5 @@
 class AuthsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :load_creds
 
   def new
     @user = User.find(current_user.id)
@@ -33,6 +33,13 @@ class AuthsController < ApplicationController
     else
       render :confirm_pin
     end
+  end
+
+private
+
+  def load_creds
+    Jetsetmeapi::Config.dev_id = ENV["DEVID"]
+    Jetsetmeapi::Config.app_id = ENV["APPID"]
   end
 
 end
