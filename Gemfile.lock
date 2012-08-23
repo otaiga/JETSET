@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/otaiga/jetsetmeapi-gem.git
-  revision: 168b16c4edf3717b43c93fc455975e2e1cc85872
-  branch: tests
+  revision: 07f416b9174b0ecd4e0af5b80cc26956f6aaef63
   specs:
     jetsetmeapi (0.0.2)
       httparty
