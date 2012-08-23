@@ -28,21 +28,10 @@
          <div class="span9">
               <div class="well">
 
-               <% unless flash[:notice].blank? %>
-                <div class="alert alert-success">
-                  <%= content_tag :div, flash[:notice] %>
-                </div>
-                <% end %>
-
-                <% unless flash[:error].blank? %>
-                  <div class="alert alert-error">
-                    <%= content_tag :div, flash[:error] %>
-                  </div>
-                <% end %>
-
-                <% unless flash[:alert].blank? %>
-                  <div class="alert">
-                    <%= content_tag :div, flash[:alert] %>
+              <% flash.each do |name, msg| %>
+                  <div class="alert alert-<%= name == :notice ? "success" : "error" %> fade in">
+                    <a class="close" data-dismiss="alert">&#215;</a>
+                    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
                   </div>
                 <% end %>
 
