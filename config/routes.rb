@@ -4,6 +4,7 @@ Jetset::Application.routes.draw do
 
   root :to => 'home#index'
   match "/account" => "accounts#index"
+  get "/account/roaming" => "accounts#roaming"
 
   resources :auths
   match "auth/confirm" => "auths#confirm"

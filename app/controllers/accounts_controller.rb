@@ -1,8 +1,13 @@
-class AccountsController < ApplicationController
-  before_filter :authenticate_user!, :validate_user_msisdn
+class AccountsController < BasicController
+  before_filter :authenticate_user!, :validate_user_msisdn, :load_creds
 
   def index
-    @country = User.find(current_user.id).country
+    @country = @user.country
+  end
+
+  def roaming
+    response = Jetsetmeapi.get_customer_status(@user.auth_key)
+    redirect_to account_path, :notice => response
   end
 
 private
