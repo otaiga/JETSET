@@ -10,7 +10,7 @@ describe NotificationsController do
     post :retieve_notification
     given_user.reload
     given_user.country.should == "33"
-    JSON.parse(response)["message"].should == "success"
+    JSON.parse(response.body)["message"].should == "success"
     @request.env.delete('RAW_POST_DATA')
   end
 
